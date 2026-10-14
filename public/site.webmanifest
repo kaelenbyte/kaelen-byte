@@ -1,0 +1,12 @@
+{
+  "name": "Kaelen Byte",
+  "short_name": "Kaelen Byte",
+  "theme_color": "#050816",
+  "background_color": "#050816",
+  "display": "standalone",
+  "icons": [{
+    "src": "/favicon.svg",
+    "sizes": "any",
+    "type": "image/svg+xml"
+  }]
+}
