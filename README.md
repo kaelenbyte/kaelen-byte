@@ -47,7 +47,16 @@ This project is structured to deploy on Vercel or a similar static host.
 - Contact email address
 - Any additional social profile URLs that are officially confirmed
 - Final biography and content updates
-- Optional profile image asset
+- An owner-approved personal portrait, if one is wanted
+
+## Photography
+
+The owner-supplied portrait is stored at `public/images/kaelen-portrait.png` and used on the Home and About pages. The other locally stored images are Unsplash stock photos for technology and editorial content, not personal portraits:
+
+- Creative workspace: https://images.unsplash.com/photo-1498050108023-c5249f4df085
+- Collaborative technology: https://images.unsplash.com/photo-1519389950473-47ba0277781c
+- Digital work: https://images.unsplash.com/photo-1461749280684-dccba630e2f6
+- Technology detail: https://images.unsplash.com/photo-1518770660439-4636190af475
 
 ## Search readiness
 
@@ -55,3 +64,4 @@ This project is structured to deploy on Vercel or a similar static host.
 - Submit the sitemap to Google Search Console.
 - Verify the homepage and request indexing only after the final domain is switched.
 - Review metadata and structured data after deployment.
+# kaelen-byte
