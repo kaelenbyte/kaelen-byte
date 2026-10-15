@@ -20,24 +20,19 @@ export function PrivacyPage() {
       <div className="space-y-6 rounded-[2rem] border border-white/10 bg-slate-900/60 p-8 text-base leading-8 text-slate-300 sm:p-10">
         <div className="flex items-center gap-3 text-sky-200">
           <ShieldCheck className="h-5 w-5" />
-          <span className="text-sm font-medium uppercase tracking-[0.2em]">Current implementation</span>
+          <span className="text-sm font-medium uppercase tracking-[0.2em]">Privacy at a glance</span>
         </div>
 
         <p>
-          This website currently operates as a static front-end without a backend, login flow, database, user accounts, or analytics script.
-          As implemented, it does not collect personal data through a custom form submission service.
+          This site keeps things simple: no accounts, no newsletter signup, and no tracking dashboard.
         </p>
 
         <p>
-          The site may still produce standard server access logs or browser-level request metadata as part of normal hosting operations. Those logs are not managed in the frontend code and are governed by the hosting provider.
+          The contact form opens your email app instead of storing your message here. Anything sent from there is handled by your email provider.
         </p>
 
         <p>
-          If a real contact form backend, tracking tool, newsletter sign-up, or other data-collection feature is added later, this page should be updated to describe the exact data collected, the purpose of collection, storage duration, and any third-party service involved.
-        </p>
-
-        <p>
-          No sensitive information should be collected without a clear purpose. The project intentionally keeps data collection minimal until a real use case is approved.
+          The hosting provider may still keep standard request logs, like IP addresses and page visits, to keep the site running and secure.
         </p>
       </div>
     </section>

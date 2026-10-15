@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://your-domain.example/</loc>
+    <loc>https://kaelen-pi.vercel.app/</loc>
   </url>
   <url>
-    <loc>https://your-domain.example/about</loc>
+    <loc>https://kaelen-pi.vercel.app/about</loc>
   </url>
   <url>
-    <loc>https://your-domain.example/content</loc>
+    <loc>https://kaelen-pi.vercel.app/content</loc>
   </url>
   <url>
-    <loc>https://your-domain.example/social</loc>
+    <loc>https://kaelen-pi.vercel.app/social</loc>
   </url>
   <url>
-    <loc>https://your-domain.example/contact</loc>
+    <loc>https://kaelen-pi.vercel.app/contact</loc>
   </url>
   <url>
-    <loc>https://your-domain.example/privacy</loc>
+    <loc>https://kaelen-pi.vercel.app/privacy</loc>
   </url>
 </urlset>

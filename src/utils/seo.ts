@@ -35,6 +35,7 @@ export function usePageMeta({
     setMeta('meta[property="og:description"]', 'content', descriptionText)
     setMeta('meta[property="og:type"]', 'content', 'website')
     setMeta('meta[property="og:site_name"]', 'content', siteConfig.brandName)
+    setMeta('meta[property="og:url"]', 'content', canonicalUrl || siteConfig.productionDomain)
     setMeta('meta[name="twitter:card"]', 'content', 'summary_large_image')
     setMeta('meta[name="theme-color"]', 'content', siteConfig.themeColor)
 

@@ -4,19 +4,24 @@ export type SocialLinkDefinition = {
   enabled: boolean
 }
 
+const productionDomain = (import.meta.env.VITE_SITE_URL || 'http://localhost:5173').replace(/\/$/, '')
+
 export const siteConfig = {
   brandName: 'Kaelen Byte',
-  tagline: 'Explore. Create. Innovate.',
-  shortIntro:
-    'Welcome to Kaelen Byte — a digital space for creativity, technology, ideas, and new possibilities.',
-  description:
-    'Explore the official Kaelen Byte website for updates, original content, projects, and social media links.',
-  productionDomain: 'https://your-domain.example',
-  themeColor: '#050816',
+  tagline: 'Create. Learn. Share.',
+  shortIntro: 'A place for ideas, experiments, and the work that comes out of them.',
+  description: 'A place for ideas, experiments, and the work that comes out of them.',
+  productionDomain,
+  themeColor: '#17211d',
   socialLinks: {
     tiktok: {
       label: 'TikTok',
       url: 'https://www.tiktok.com/@jaydendarius.me',
+      enabled: true,
+    },
+    whatsapp: {
+      label: 'WhatsApp',
+      url: 'https://wa.me/254702155734',
       enabled: true,
     },
     facebook: { label: 'Facebook', url: '', enabled: false },
@@ -26,20 +31,20 @@ export const siteConfig = {
     linkedin: { label: 'LinkedIn', url: '', enabled: false },
   } as Record<string, SocialLinkDefinition>,
   contact: {
-    email: '',
+    email: 'kaelenbyte.us@gmail.com',
     phone: '',
     formEnabled: false,
   },
   seo: {
     defaultTitle: 'Kaelen Byte | Official Website',
-    defaultDescription:
-      'Explore the official Kaelen Byte website for updates, original content, projects, and social media links.',
+    defaultDescription: 'A place for ideas, experiments, and the work that comes out of them.',
   },
   navItems: [
     { to: '/', label: 'Home' },
     { to: '/about', label: 'About' },
     { to: '/content', label: 'Content' },
     { to: '/social', label: 'Social' },
+    { to: '/community', label: 'Community' },
     { to: '/contact', label: 'Contact' },
   ],
 } as const

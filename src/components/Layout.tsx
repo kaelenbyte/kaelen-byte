@@ -1,8 +1,11 @@
-import { ArrowRight, Menu, Sparkles, X } from 'lucide-react'
+import { ArrowRight, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 import { configuredSocialLinks, siteConfig } from '../config/site'
+import { SocialIconLink } from './SocialIconLink'
+
+const copyrightYear = new Date().getFullYear()
 
 function BrandMark() {
   return (
@@ -23,9 +26,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),transparent_35%)]" />
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur-xl">
+    <div className="relative isolate min-h-screen bg-[#17211d] text-slate-100">
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <img
+          src="/images/site-background.jpg"
+          alt=""
+          className="h-full w-full object-cover opacity-[0.22]"
+        />
+      </div>
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#17211d]">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <Link to="/" aria-label="Go to homepage" className="flex items-center gap-3">
             <BrandMark />
@@ -53,7 +62,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               to="/contact"
               className="inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-500/10 px-4 py-2 text-sm font-medium text-sky-200 transition hover:border-sky-300 hover:bg-sky-500/20"
             >
-              Connect
+              Say hello
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -70,7 +79,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         {menuOpen && (
-          <div className="border-t border-white/10 bg-slate-950 md:hidden">
+          <div className="border-t border-white/10 bg-[#17211d] md:hidden">
             <nav className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4" aria-label="Mobile navigation">
               {siteConfig.navItems.map((item) => (
                 <NavLink
@@ -91,9 +100,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         )}
       </header>
 
-      <main className="relative">{children}</main>
+      <main className="relative z-10">{children}</main>
 
-      <footer className="border-t border-white/10 bg-slate-950/80">
+      <footer className="relative z-10 border-t border-white/10 bg-[#17211d]">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.4fr_0.8fr_1fr] lg:px-8">
           <div>
             <div className="mb-4 flex items-center gap-3">
@@ -121,37 +130,25 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
           <div>
             <h2 className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-slate-300">
-              Connect
+              Follow along
             </h2>
             {configuredSocialLinks.length > 0 ? (
-              <ul className="space-y-3 text-sm text-slate-400">
+              <ul className="flex flex-wrap gap-3">
                 {configuredSocialLinks.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 transition hover:text-white"
-                    >
-                      {link.label}
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </a>
+                    <SocialIconLink link={link} />
                   </li>
                 ))}
               </ul>
             ) : (
-              <p className="text-sm text-slate-400">Social links are ready to be configured.</p>
+              <p className="text-sm text-slate-400">No links yet.</p>
             )}
           </div>
         </div>
 
         <div className="border-t border-white/10">
           <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-5 text-sm text-slate-400 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-            <p>© 2026 Kaelen Byte. All rights reserved.</p>
-            <div className="flex items-center gap-2 text-sky-300">
-              <Sparkles className="h-4 w-4" />
-              <span>Editable brand copy</span>
-            </div>
+            <p>© {copyrightYear} Kaelen Byte. All rights reserved.</p>
           </div>
         </div>
       </footer>

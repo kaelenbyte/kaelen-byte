@@ -2,39 +2,49 @@ import { ArrowRight, FolderKanban, Globe, MessagesSquare, PencilRuler, Sparkles 
 import { Link } from 'react-router-dom'
 
 import { StructuredData } from '../components/StructuredData'
+import { SocialIconLink } from '../components/SocialIconLink'
 import { configuredSocialLinks, siteConfig } from '../config/site'
 import { usePageMeta } from '../utils/seo'
 
 const pillars = [
   {
-    title: 'Creative direction',
-    description: 'A digital presence shaped around ideas, experimentation, and meaningful expression.',
+    title: 'Design direction',
+    description: 'Ideas shaped by curiosity, craft, and a clear point of view.',
     icon: PencilRuler,
   },
   {
-    title: 'Technology focus',
-    description: 'A thoughtful approach to modern tools, digital systems, and online experiences.',
+    title: 'Digital work',
+    description: 'Hands-on projects, tools, and thinking behind the work.',
     icon: FolderKanban,
   },
   {
-    title: 'Connected presence',
-    description: 'A public profile designed to make content, updates, and social connections easy to discover.',
+    title: 'Online presence',
+    description: 'Updates, links, and a simple place to stay connected.',
     icon: Globe,
   },
 ]
 
 const featureCards = [
   {
-    title: 'Editorial updates',
-    text: 'Placeholder content blocks keep the publishing flow ready for real announcements, stories, and project highlights.',
+    title: 'Writing & notes',
+    text: 'Short posts, ideas, and updates as they happen.',
+    image: '/images/digital-work.jpg',
+    imageAlt: 'Close-up photograph of source code on a monitor',
+    to: '/content',
   },
   {
-    title: 'Project highlights',
-    text: 'Curated categories make it easy to present work, interests, and themes without claiming completed work that has not been verified.',
+    title: 'About the work',
+    text: 'A clearer look at the thinking behind Kaelen Byte.',
+    image: '/images/technology-detail.jpg',
+    imageAlt: 'Close-up photograph of a computer circuit board',
+    to: '/about',
   },
   {
-    title: 'Brand presence',
-    text: 'The digital identity stays clean, modern, and easy to extend as the brand evolves.',
+    title: 'Stay connected',
+    text: 'Find the latest links and reach out directly.',
+    image: '/images/collaborative-technology.jpg',
+    imageAlt: 'Overhead photograph of people working around laptops',
+    to: '/social',
   },
 ]
 
@@ -64,7 +74,7 @@ export function HomePage() {
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-500/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.22em] text-sky-200">
               <Sparkles className="h-3.5 w-3.5" />
-              Official website
+              Ideas in motion
             </div>
 
             <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -82,52 +92,27 @@ export function HomePage() {
                 to="/about"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-400"
               >
-                Explore the brand
+                About the work
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <a
-                href={siteConfig.socialLinks.tiktok.url}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                to="/community"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-sky-300 hover:bg-sky-500/10"
               >
-                View social profile
+                Community feed
                 <MessagesSquare className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-to-br from-sky-500/20 via-slate-900 to-slate-900 blur-3xl" />
-            <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-6 shadow-[0_0_80px_rgba(14,165,233,0.1)]">
-              <div className="rounded-[1.5rem] border border-sky-400/20 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),_rgba(15,23,42,0.8))] p-6">
-                <div className="mb-6 flex items-center justify-between text-slate-300">
-                  <span className="text-xs font-medium uppercase tracking-[0.2em]">Brand identity</span>
-                  <span className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-emerald-300">
-                    Ready to evolve
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-sky-400/60 bg-sky-500/10 text-2xl font-black tracking-[0.22em] text-sky-200">
-                    KB
-                  </div>
-                  <div>
-                    <div className="text-2xl font-semibold text-white">Kaelen Byte</div>
-                    <div className="mt-1 text-sm text-slate-300">Modern digital storytelling</div>
-                  </div>
-                </div>
-
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-2xl border border-white/10 bg-slate-950/60 p-4">
-                    <div className="text-xs uppercase tracking-[0.2em] text-slate-400">Focus</div>
-                    <div className="mt-2 text-lg font-semibold text-white">Ideas</div>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-slate-950/60 p-4">
-                    <div className="text-xs uppercase tracking-[0.2em] text-slate-400">Style</div>
-                    <div className="mt-2 text-lg font-semibold text-white">Technology</div>
-                  </div>
-                </div>
+            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#1d2a24] p-3">
+              <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#1d2a24]">
+                <img
+                  src="/images/kaelen-portrait.png"
+                  alt="Portrait of Kaelen Byte"
+                  className="h-[420px] w-full object-cover object-top sm:h-[520px]"
+                />
               </div>
             </div>
           </div>
@@ -137,9 +122,9 @@ export function HomePage() {
       <section className="border-y border-white/10 bg-slate-900/40">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="mb-8 max-w-2xl">
-            <p className="text-sm font-medium uppercase tracking-[0.25em] text-sky-300">Brand introduction</p>
+            <p className="text-sm font-medium uppercase tracking-[0.25em] text-sky-300">Overview</p>
             <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
-              What Kaelen Byte represents
+              What Kaelen Byte is about
             </h2>
           </div>
 
@@ -160,8 +145,8 @@ export function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.25em] text-sky-300">Featured content</p>
-            <h2 className="mt-3 text-3xl font-semibold text-white">Projects and interests</h2>
+            <p className="text-sm font-medium uppercase tracking-[0.25em] text-sky-300">Explore</p>
+            <h2 className="mt-3 text-3xl font-semibold text-white">Find your way around</h2>
           </div>
           <Link to="/content" className="hidden text-sm font-medium text-sky-300 hover:text-sky-200 sm:inline-flex">
             View content →
@@ -170,10 +155,14 @@ export function HomePage() {
 
         <div className="grid gap-5 md:grid-cols-3">
           {featureCards.map((item) => (
-            <article key={item.title} className="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
-              <div className="mb-4 h-10 w-10 rounded-full border border-sky-400/40 bg-sky-500/10" />
-              <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-400">{item.text}</p>
+            <article key={item.title} className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60">
+              <Link to={item.to} className="group block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300">
+                <img src={item.image} alt={item.imageAlt} className="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-400">{item.text}</p>
+                </div>
+              </Link>
             </article>
           ))}
         </div>
@@ -183,30 +172,22 @@ export function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="mb-8 max-w-2xl">
             <p className="text-sm font-medium uppercase tracking-[0.25em] text-sky-300">Social media</p>
-            <h2 className="mt-3 text-3xl font-semibold text-white">Connections and updates</h2>
+            <h2 className="mt-3 text-3xl font-semibold text-white">Links and updates</h2>
           </div>
 
           {configuredSocialLinks.length > 0 ? (
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {configuredSocialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group rounded-2xl border border-white/10 bg-slate-950/60 p-5 transition hover:border-sky-400/40 hover:bg-slate-900"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-base font-semibold text-white">{link.label}</span>
-                    <ArrowRight className="h-4 w-4 text-sky-300 transition group-hover:translate-x-1" />
-                  </div>
-                  <p className="mt-3 text-sm text-slate-400">{link.url}</p>
-                </a>
-              ))}
-            </div>
+            <nav aria-label="Social profiles">
+              <ul className="flex flex-wrap gap-3">
+                {configuredSocialLinks.map((link) => (
+                  <li key={link.label}>
+                    <SocialIconLink link={link} />
+                  </li>
+                ))}
+              </ul>
+            </nav>
           ) : (
             <div className="rounded-2xl border border-dashed border-white/10 bg-slate-950/50 p-8 text-slate-300">
-              No public social profiles are configured yet. Add the profile URLs in the site config before launch.
+              No social profiles are available.
             </div>
           )}
         </div>
@@ -217,7 +198,7 @@ export function HomePage() {
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-sky-200">Contact</p>
           <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">Ready to connect?</h2>
           <p className="mx-auto mt-4 max-w-2xl text-slate-200">
-            This site is prepared for real updates, profile links, and contact details when the owner is ready to share them.
+            Questions, collaborations, or just a hello? Get in touch by email.
           </p>
           <div className="mt-8 flex justify-center">
             <Link
